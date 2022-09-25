@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://Dmytro-Pinchuk.github.io/gr12-ice-cream-project",
+  "homepage": "https://VickyVsV.github.io/ice-cream-project",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /gr12-ice-cream-project/"
+    "build": "parcel build src/*.html --public-url /ice-cream-project/"
   },
   "repository": {
     "type": "git",
