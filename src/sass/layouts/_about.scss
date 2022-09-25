@@ -1,0 +1,221 @@
+.about{
+    background-color: $pagination-bullet-bgcolor-active;
+    padding-bottom: 42px;
+    padding-top: 60px;
+    @include tablet{
+        padding-bottom: 53px;
+    }
+    @include desktop{
+        padding-bottom: 152px;
+    }
+}
+.about .conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 20px ;
+@include mobile{
+    width: 480px;
+    max-width: none;
+}
+    @include tablet {
+        width: 768px;
+    }
+    @include desktop {
+        width: 1200px;
+    }
+}
+.about__label {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 0;
+    color: $main-text-color;
+    @include tablet {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1.23;
+    letter-spacing: 0.04em;
+    }
+    @include desktop{
+    font-size: 30px;
+    }
+}
+.about__title {
+    font-family: "Seymour One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.27;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $main-text-color;
+    margin: 0px 64px 32px 64px ;
+    @include tablet {
+    font-size: 34px;
+    line-height: 1.26;
+    letter-spacing: 0.06em;
+    margin-bottom: 72px;
+    }
+    @include desktop{
+    font-size: 36px;
+    line-height: 1.25;
+    letter-spacing: 0.06em;
+    margin-bottom: 82px;
+    }
+}
+.about__box {
+    position: relative;
+    width: 279px;
+    height: 279px;
+    margin-bottom: 62px;
+    background: linear-gradient(
+        0deg,
+        rgba(248, 210, 78, 0.7),
+        rgba(248, 210, 78, 0.7)
+    ),
+    #d9d9d9;
+    box-shadow: 0px 4.48583px 16.8218px rgba(153, 114, 23, 0.25);
+    border-radius: 140.182px;
+    @include tablet {
+        margin-bottom: 0;
+    width: 335px;
+    height: 330px;
+    border-radius: 165.879px;
+    @include desktop{
+        border-radius: 250px;
+        width: 500px;
+        height: 500px;
+    }
+    }
+}
+.about__picture {
+    position: absolute;
+    top: 8%;
+    left: 0%;
+    
+    @include desktop{
+        left: 1%; 
+    }
+}
+.about__img {
+    width: 100%;
+}
+.about_item {
+    &:not(:last-child) {
+    margin-bottom: 4px;
+    }
+
+}
+
+.about__text {
+    box-sizing: border-box;
+    display: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 176%;
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin: 0 auto 0 auto;
+    color: $main-text-color;
+    @include tablet {
+    margin-top: 8px;
+    text-align: start;
+    }
+    @include desktop{
+        font-size: 14px;
+        line-height: 194%;
+    }
+}
+.about__text__desctop {
+    display: none;
+    @include tablet {
+    display: block;
+    font-style: normal;
+    text-align: start;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 194%;
+    letter-spacing: 0.04em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 8px;
+    color: $main-text-color;
+    }
+    @include desktop{
+    font-size: 13px;
+    line-height: 194%;
+    
+    }
+}
+.about__btn {
+    margin-top: 20px;
+    padding: 12px 34px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.29;
+    text-align: center;
+    color: $second-text-color;
+    background-color: $second-body-color;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover {
+    background-color: #0a8817;
+    }
+    &:focus {
+    color: #fcfcfc;
+    background-color: #0a8817;
+    }
+    @include tablet {
+    margin-top: 48px;
+    }
+}
+.about_part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    @include tablet {
+    padding: 0;
+    width: calc(100% - 373px);
+    align-items: flex-start;
+    }
+    @include desktop{
+        margin-top: 90px;
+        width: calc(100% - 705px);
+        margin-right: 100px;
+    }
+}
+.about__thumb {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    @include tablet {
+    gap: 32px;
+    flex-direction: row;
+    align-items: flex-start;
+    width: calc(100% - 24px);
+    }
+    @include desktop{
+        gap: 95px;
+        width: 100%;
+    }
+}

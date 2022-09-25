@@ -1,0 +1,189 @@
+<!--modal-form--buy now-->
+<div class="modal-backdrop modal-is-hidden" id="modal-backdrop">
+    <div class="modal-window modal-is-hidden modal-window--buy-now-padding" id="buy_now_form">
+        <button id="close-btn-buy_now" name="close_btn_buy_now" class="modal-window__close-btn" value="buy_now_form">
+            <svg class="" width="20" height="20">
+                <use href="./images/icons.svg#icon-chrose"></use>
+            </svg>
+        </button>
+        <p class="modal-window__header modal-window__header--margin-buy-now">Buy now</p>
+        <form name="buy_now">
+            <ul class="modal-product list">
+                <li class="modal-product__item">
+                    <input class="modal-product__check" type="checkbox" id="cream" name="product_cream">
+                    <label class="modal-product__checkbox modal-product__checkbox--color-green" for="cream">
+                    <span class="modal-product-image__container">
+                        <picture>
+                            <source srcset="./images/modal/buy-now/cream-m.jpg 1x, ./images/modal/buy-now/cream-m-2x.jpg 2x" media="(max-width:767px)">
+                            <source srcset="./images/modal/buy-now/cream-m.jpg 1x, ./images/modal/buy-now/cream-m-2x.jpg 2x" media="(min-width:768px)">
+                            <img class="modal-product-image modal-product-image--absolute-position" src="./images/modal/buy-now/cream-m.jpg" alt="ice cream" width="132">
+                        </picture>
+                    </span>
+                        <span class="modal-product__name">Ice cream</span>
+                    </label>
+                </li>
+                <li class="modal-product__item">
+                    <input class="modal-product__check" type="checkbox" id="cofee" name="product_cofee">
+                    <label class="modal-product__checkbox modal-product__checkbox--color-yellow" for="cofee">
+                    <span class="modal-product-image__container">
+                        <picture>
+                            <source srcset="./images/modal/buy-now/cofee-m.jpg 1x, ./images/modal/buy-now/cofee-m-2x.jpg 2x" media="(max-width:767px)">
+                            <source srcset="./images/modal/buy-now/cofee-m.jpg 1x, ./images/modal/buy-now/cofee-m-2x.jpg 2x" media="(min-width:768px)">
+                            <img class="modal-product-image modal-product-image--absolute-position" src="./images/modal/buy-now/cream-m.jpg" alt="ice cream" width="132">
+                        </picture>
+                    </span>
+                        <span class="modal-product__name">Ice coffee</span>
+                    </label>
+                </li>
+                <li class="modal-product__item">
+                    <input class="modal-product__check" type="checkbox" id="milkshake" name="product_milkshake">
+                    <label class="modal-product__checkbox modal-product__checkbox--color-brown" for="milkshake">
+                    <span class="modal-product-image__container">
+                        <picture>
+                            <source srcset="./images/modal/buy-now/milkshake-m.jpg 1x, ./images/modal/buy-now/milkshake-m-2x.jpg 2x" media="(max-width:767px)">
+                            <source srcset="./images/modal/buy-now/milkshake-m.jpg 1x, ./images/modal/buy-now/milkshake-m-2x.jpg 2x" media="(min-width:768px)">
+                            <img class="modal-product-image modal-product-image--color-brown modal-product-image--absolute-position" src="./images/modal/buy-now/milkshake-m.jpg" alt="ice cream" width="132">
+                        </picture>
+                    </span>
+                        <span class="modal-product__name">Milkshake</span>
+                    </label>
+                </li>
+            </ul>
+            <ul class="modal-user-info list">
+                <li class="modal-user-info__item">
+                    <input class="modal-user-info__input" id="buyer_name" name="buyer_name" type="text" required placeholder="Name">
+                </li>
+                <li class="modal-user-info__item">
+                    <input class="modal-user-info__input" id="buyer_phone" name="buyer_phone" type="tel" required pattern="((\+)\d{12})|(\d{10})" placeholder="Phone">
+                </li>
+                <li class="modal-user-info__item">
+                    <textarea class="modal-user-info__input modal-user-info__input--textarea" id="buyer_comment" name="buyer_comment" placeholder="Comment"></textarea>
+                </li>
+            </ul>
+            <button type="submit" class="modal-btn" name="submit_btn" value="buy-now">Submit</button>
+        </form>
+    </div>
+    <!--Modal ingredients-->
+    <div class="modal-window modal-is-hidden modal-window--ingradients-padding" id="modal_ingredients">
+        <button id="close-btn-ingradients" class="modal-window__close-btn" value="modal_ingredients">
+            <svg class="" width="20" height="20">
+                <use href="./images/icons.svg#icon-chrose"></use>
+            </svg>
+        </button>
+        <p class="modal-window__header modal-window__header--ingredients-margin">Chololate icecream</p>
+        <img class="modal-product-image modal-product-image--add-margin-bottom" srcset="./images/modal/ingredients/img-1-full.jpg 1x, ./images/modal/ingredients/img-1-full-2x.jpg 2x" src="./images/modal/ingredients/img-1-full.jpg" alt="ice cream" width="132">
+        <ul class="modal-energy list">
+            <li class="modal-energy__item">
+                <p class="modal-energy__val"><span>320</span></p>
+                <p class="modal-energy__measures">kcal</p>
+            </li>
+            <li class="modal-energy__item">
+                <p class="modal-energy__val"><span>4g</span></p>
+                <p class="modal-energy__measures">Prote...</p>
+            </li>
+            <li class="modal-energy__item">
+                <p class="modal-energy__val"><span>8,2g</span></p>
+                <p class="modal-energy__measures">Fats</p>
+            </li>
+            <li class="modal-energy__item">
+                <p class="modal-energy__val"><span>40,4g</span></p>
+                <p class="modal-energy__measures">Carbs</p>
+            </li>
+        </ul>
+        <p class="modal-header-ingredients">Ingredients</p>
+        <ul class="ingredients-list list">
+            <li class="ingredients-list__item">
+                <span class="ingredients-list__val-name">Milk</span><span class="ingredients-list__val">100ml</span>
+            </li>
+            <li class="ingredients-list__item">
+                <span class="ingredients-list__val-name">Belgian chocolate</span><span class="ingredients-list__val">20g</span>
+            </li>
+            <li class="ingredients-list__item">
+                <span class="ingredients-list__val-name">Cream</span><span class="ingredients-list__val">150 ml</span>
+            </li>
+            <li class="ingredients-list__item">
+                <span class="ingredients-list__val-name">Cocoa powder</span><span class="ingredients-list__val">30g</span>
+            </li>
+            <li class="ingredients-list__item">
+                <span class="ingredients-list__val-name">Sugar</span><span class="ingredients-list__val">40g</span>
+            </li>
+            <li class="ingredients-list__item">
+                <span class="ingredients-list__val-name">Vanilla sugar</span><span class="ingredients-list__val">10g</span>
+            </li>
+        </ul>
+        <form name="Ingredients">
+            <ul class="modal-user-info modal-user-info--ingradient-margin list">
+                <li class="modal-user-info__item">
+                    <input class="modal-user-info__input" id="user_name" name="user_name" type="text" required placeholder="Name">
+                </li>
+                <li class="modal-user-info__item">
+                    <input class="modal-user-info__input" id="user_phone" name="user_phone" type="tel" pattern="((\+)\d{12})|(\d{10})" required placeholder="Phone">
+                </li>
+                <li class="modal-user-info__item">
+                    <textarea class="modal-user-info__input modal-user-info__input--textarea" id="user_comment" name="user_comment" placeholder="Comment"></textarea>
+                </li>
+            </ul>
+            <button type="submit" class="modal-btn" name="submit_btn" value="Ingredients">Submit</button>
+        </form>
+    </div>
+    <!--  Franchise-modal -->
+    <div class="modal-window modal-is-hidden" id="franchise_modal">
+        <button id="close-btn-franchise" class="modal-window__close-btn" value="franchise_modal">
+           <svg class="" width="20" height="20">
+            <use href="./images/icons.svg#icon-chrose"></use>
+           </svg> 
+        </button>
+        <p class="modal-window__header">Thank you for your interest in owning an Ice Cream shop</p>
+        <p class="modal-window__main-text">
+            Due to the overwhelming volume of franchise requests we are not accepting new franchisee applications at this time. Once the application process resumes, we will contact you for further information. Please fill out the contact information below and we will reach out for additional information. We appreciate your patience.
+        </p>
+        <form name="franchise_modal">
+            <ul class="modal-user-info list">
+                <li class="modal-user-info__item">
+                    <input class="modal-user-info__input" id="user_name-franchis" name="user_name_franchis" type="text" required placeholder="Name">
+                </li>
+                <li class="modal-user-info__item">
+                    <input class="modal-user-info__input" id="user_phone-franchis" name="user_phone_franchis" type="tel" required placeholder="Phone" pattern="((\+)\d{12})|(\d{10})">
+                </li>
+                <li class="modal-user-info__item">
+                    <input class="modal-user-info__input" id="user_mail-franchis" name="user_mail_franchis" type="email" required placeholder="Email">
+                </li>
+                <li class="modal-user-info__item">
+                    <textarea class="modal-user-info__input modal-user-info__input--textarea" id="user_comment-franchis" name="user_comment_franchis" placeholder="Comment"></textarea>
+                </li>
+            </ul>
+            <button type="submit" class="modal-btn" name="submit_btn_franchis" value="Franchise_modals">Submit</button>
+        </form>
+    </div>
+    <!--Read-more-modal-->
+    <div class="modal-window modal-is-hidden" id="read_more_modal">
+        <button id="close-btn-read" class="modal-window__close-btn" value="read_more_modal">
+            <svg class="" width="20" height="20">
+                <use href="./images/icons.svg#icon-chrose"></use>
+            </svg>
+        </button>
+        <p class="modal-window__header">How it’s made?</p>
+        <p class="modal-window__media-content">
+            <video class="modal-video-window" width="224" height="199" controls="controls" poster="#">
+                <source src="./images/modal/read-more/video-360.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                Тег video не поддерживается вашим браузером.
+                <a href="./images/modal/read-more/video-360.mp4">Скачайте видео</a>.
+            </video>
+        </p>
+        <p class="modal-window__main-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        </p>
+    </div>
+    <!--Our-location-modal-->
+    <div class="modal-window modal-is-hidden" id="our_location_modal">
+        <button id="close-btn-location" class="modal-window__close-btn" value="our_location_modal">
+            <svg class="" width="20" height="20">
+                <use href="./images/icons.svg#icon-chrose"></use>
+            </svg>
+        </button>
+        <p class="modal-window__header">Our location</p>
+        <div class="modal-map" id="map">
+        </div>
+            <a class="modal-btn__link link" href="https://goo.gl/maps/7zt89sniHsoEWSrH8" rel="nofollow noopener noreferrer" target="_blank">Open map</a>
+    </div>
+</div>

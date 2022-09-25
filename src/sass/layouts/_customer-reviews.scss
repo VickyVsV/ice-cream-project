@@ -1,0 +1,150 @@
+.customer {
+  &__review{
+    margin: 0 auto;
+    background-image: url(../images/customer_reviews/reviews_backgorund480.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    padding: 186px 20px 394px 20px;
+    width: 100%;
+    max-width: 100%;
+    @include retina {
+        background-image: url(../images/customer_reviews/reviews_backgorund480_2x.jpg);
+    };
+    @include mobile {
+        width: 480px;
+        max-width:none;
+    };
+    @include tablet {
+        width: 768px;
+        padding: 223px 32px 383px 32px;
+        background-image: url(../images/customer_reviews/reviews_backgorund768.jpg);
+        @include retina {
+            background-image: url(../images/customer_reviews/reviews_backgorund768_2x.jpg);
+        }
+    } 
+    @include desktop {
+        width: 1200px;
+        padding: 456px 116px 196px 116px;   
+        background-image: url(../images/customer_reviews/reviews_background1200.jpg);
+        @include retina {
+            background-image: url(../images/customer_reviews/reviews_background1200_2x.jpg);
+        }
+    } 
+  }
+  &__list{
+    padding: 0;
+      width: 100%;
+      max-width: 100%;
+    @include mobile {
+      width:480px;
+      max-width: none;
+    }
+    @include tablet {
+      width: 768px;
+    }
+    @include desktop {
+      width: 1200px;
+    }
+  }
+  &__item{
+    display: flex;
+  text-align: center;
+  align-items: center;
+    font-size: 18px;
+    background: transparent;
+  }
+  &__item img {
+    display: block;
+    margin-bottom: 32px;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    @include tablet {
+      margin-bottom: 28px;
+    }
+    @include desktop {
+      margin-bottom: 32px;
+    }
+  }
+  &__container {
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__text {
+    box-sizing: border-box;
+    display: inherit;
+    align-items: center;
+    justify-content: center;
+    height: 256px;
+    padding: 34px 39px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    line-height: 2.55;
+    color: $main-text-color;
+    background: $main-body-color;
+    border-radius: 10px;
+      @include tablet {
+        height: 138px;
+        padding: 34px 74px 34px 73px;
+        margin-bottom: 32px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.86;
+        letter-spacing: 0.04em;
+      }
+      @include desktop {
+        font-size: 16px;
+      }
+  }
+  &__name{
+    margin-bottom: 14px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.86;
+    color: #131313;
+    @include tablet{
+    margin-bottom: 32px;
+    font-size: 16px;
+    }
+  }
+}
+.swiper {
+  &-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  &-pagination{
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      position: initial;
+      &-bullet {
+        width: 12px;
+        height: 12px;
+        background: $pagination-bullet-bgcolor;
+        opacity: 1;
+        &-active{
+        background-color: $pagination-bullet-bgcolor-active;
+        }
+      }
+  }
+  .swiper-pagination-clickable .swiper-pagination-bullet {
+    @include desktop {
+      cursor: inherit;
+    }
+  }
+}
+

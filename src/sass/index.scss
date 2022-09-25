@@ -1,0 +1,20 @@
+@import './utils/vars';
+@import './utils/hidden';
+@import './utils/resets';
+@import './utils/mixins';
+@import './components/animation-frames';
+@import './components/cursor';
+@import './components/components';
+@import './components/common';
+@import './components/modal';
+
+@import './layouts/header';
+@import './components/mobile_menu';
+@import './layouts/hero';
+@import './layouts/products';
+@import './layouts/about';
+@import './layouts/advantages';
+@import './layouts/gallery';
+@import './layouts/customer-reviews';
+@import './layouts/contacts';
+@import './layouts/footer';

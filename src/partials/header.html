@@ -1,0 +1,111 @@
+<header class="header" id="header">
+  <div class="container header__container">
+    <a href="./index.html" class="logo__link link">
+      <span class="logo">
+        <picture class="logo__pictuare">
+          <source srcset="
+                        ./images/header/logo-desk.png    1x,
+                        ./images/header/logo-desk-2x.png 2x
+                      " media="(min-width:1200px)" />
+          <source srcset="
+                        ./images/header/logo-tab.png    1x,
+                        ./images/header/logo-tab-2x.png 2x
+                      " media="(min-width:768px)" />
+          <source srcset="
+                        ./images/header/logo-mob.png    1x,
+                        ./images/header/logo-mob-2x.png 2x
+                      " media="(max-width:767px)" />
+          <img class="nav__logo" src="./images/header/logo-desk.png" alt="logo" />
+        </picture>
+      </span>
+    </a>
+    <nav class="navigation">
+      <ul class="navigation__list list">
+        <li class="navigation__item">
+          <a href="./index.html" class="navigation__link link">Home</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#about" class="navigation__link link">How it’s made?</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#products_section" class="navigation__link link">Our products</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#contacts" class="navigation__link link">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header__buttons">
+      <button type="button" class="menu__btn" data-menu-open>
+        <svg class="menu__icon" width="32px" height="32px">
+          <use href="./images/icons.svg#icon-menu"></use>
+        </svg>
+      </button>
+      <button type="button" class="buy-now__btn">
+        <span class="buy-now__text">Buy now</span>
+        <svg class="buy-now__icon" width="7" height="10">
+          <use href="./images/icons.svg#icon-btn-more"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="mob-menu is-hidden" data-menu>
+    <div class="mob-menu__container container">
+      <div class="mob-menu__wrap">
+        <div class="mob-menu__box-1">
+          <a href="./index.html" class="logo__link link">
+            <span class="logo">
+              <picture class="logo__pictuare">
+                <source srcset="
+                                  ./images/header/logo-desk.png    1x,
+                                  ./images/header/logo-desk-2x.png 2x
+                                " media="(min-width:1200px)" />
+                <source srcset="
+                                  ./images/header/logo-tab.png    1x,
+                                  ./images/header/logo-tab-2x.png 2x
+                                " media="(min-width:768px)" />
+                <source srcset="
+                                  ./images/header/logo-mob.png    1x,
+                                  ./images/header/logo-mob-2x.png 2x
+                                " media="(max-width:767px)" />
+                <img class="nav__logo" src="./images/header/logo-desk.png" alt="logo" />
+              </picture>
+            </span>
+          </a>
+          <button type="button" class="menu-close__btn" data-menu-close>
+            <svg class="menu-close__icon" width="20px" height="20px">
+              <use href="./images/icons.svg#icon-chrose"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="mob-menu__box-2">
+          <nav class="mob-nav">
+            <ul class="mob-nav__list list">
+              <li class="mob-nav__item">
+                <a href="./index.html" class="mob-nav__link link">Home</a>
+              </li>
+              <li class="mob-nav__item">
+                <a href="" class="mob-nav__link link">How it’s made?</a>
+              </li>
+              <li class="mob-nav__item">
+                <a href="#products_section" class="mob-nav__link link">Our products</a>
+              </li>
+              <li class="mob-nav__item">
+                <a href="#contacts" class="mob-nav__link link">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="mob-menu__box-3">
+        <button type="button" class="mob-menu__btn">
+          <span class="mob-menu__text">Buy now</span>
+          <svg class="mob-menu__icon" width="7" height="10">
+            <use href="./images/icons.svg#icon-btn-more"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <a class="upscroll link" href="#header"></a>
+</header> 

@@ -1,0 +1,573 @@
+//=================variables=======================
+
+$modal-main-duration-time: 250ms;
+$modal-main-delay-time: 0;
+//-----------------modal-window---------------
+$modal-window-bgcolor: #FCFCFC;
+$modal-window-border-color: #F8D24E;
+$modal-window-main-text-color: #131313;
+//---------------modal-btn-----------------
+$modal-btn-def-color: #F8D24E;
+$modal-btn-hover-color:#0A8817;
+$modal-btn-focus-text-color: #FCFCFC;
+//------------modal-img---------------
+$modal-img-shadow-green: 0px 8px 0px rgba(156, 190, 143, 0.7),0px 9px 19.726px rgba(10, 136, 23, 0.25);
+$modal-img-shadow-yellow: 0px 8px 0px rgba(248, 210, 78, 0.7),0px 9px 19.726px rgba(153, 114, 23, 0.25);
+$modal-img-shadow-brown: 0px 8px 0px rgba(213, 117, 63, 0.7),0px 9px 19.726px rgba(0, 0, 0, 0.25);
+
+//==================the==END==variables=============================
+
+//================== MIXINS ==========================================
+
+@mixin modal_border_color($borderThickness, $borderLine, $borderColor, $borderRadius, $bgColor, $bxShadow) 
+{
+    border-color: $borderColor;
+    border-radius: $borderRadius;
+    border: $borderThickness $borderLine $borderColor;
+    border-top: none;
+    background-color: $bgColor;
+    box-shadow: $bxShadow;
+    
+}
+//======================== The--END--Mixins=======================================
+
+//=======================base-classes=============================================
+.modal-is-hidden
+{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(20%,20%);
+    width: 1px;
+    height: 1px;
+}
+//======================The--END--base-classes---------------------------------
+.modal-backdrop 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(100%,100%);
+
+    overflow-y: scroll;
+    z-index: 12;
+
+    transition-property: opacity, visibility;
+    transition-duration: $modal-main-duration-time;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    //transition-delay: var(--main-delay-time);
+
+    &.modal-is-hidden.modal-window
+    {
+        transform: translate(-50%, -50%) scale(0,0) skewY(-90deg);
+        transition-property: opacity, visibility,transform;
+        transition-duration: $modal-main-duration-time;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);;
+        //transition-delay: var(--main-delay-time);
+    }
+        //transition-delay: $modal-main-delay-time;
+}
+.modal-window
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-40%) scale(100%,100%);
+
+    max-width: 280px;
+    width: 100%;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    padding-left: 28px;
+    padding-right: 28px;
+    text-align: center;
+
+    background-color: $modal-window-bgcolor;
+
+    border: 2px solid $modal-window-border-color;
+    border-radius: 10px;
+
+    transition-property: opacity, visibility,transform;
+    transition-duration: $modal-main-duration-time;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);;
+    transition-delay: $modal-main-delay-time;
+
+    @include tablet
+    {
+        max-width: 568px;
+        padding: 32px 60px;
+
+    }
+    &--ingradients-padding
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @include tablet
+        {   
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+    &--buy-now-padding
+    {
+        @include tablet
+        {   
+            padding-left: 54px;
+            padding-right: 54px;
+        }
+    }
+}
+.modal-window__close-btn
+{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: transparent;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+.modal-window__header 
+{
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    font-family: 'Seymour One';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5;
+
+    @include tablet
+    {
+        max-width: 322px;
+
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    &--margin-buy-now
+    {
+        margin-bottom: 96px;
+        @include tablet
+        {
+            margin-bottom: 116px;
+        }
+    }
+    &--ingredients-margin
+    {
+        margin-bottom: 22px;
+        max-width: 142px;
+        @include tablet
+        {
+            margin-bottom: 24px;
+        }
+    }
+}
+.modal-product
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 24px;
+
+    @include tablet
+    {
+        margin-bottom: 40px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.modal-product__item 
+{
+    width: 132px;
+    //height: 132px;
+    //position: relative;
+    @media screen and (max-width: 767px)
+    {
+        &:not(:last-child)
+        {
+            margin-bottom: 76px;
+        }
+    }
+}
+    
+//-----label--------------
+.modal-product__checkbox
+{
+    display: block;
+    //position: relative;
+    width: 100%;
+    height: 100%;
+
+    padding-bottom: 20px;
+    border-radius: 10px;
+
+    text-align: center;
+
+    &--color-green
+    {
+        @include modal_border_color(2px,solid,#96AF8C,10px,none,none);
+    }
+    &--color-yellow
+    {
+        @include modal_border_color(2px,solid,#EFD478,10px,none,none);
+    }
+    &--color-brown
+    {
+        @include modal_border_color(2px,solid,#D6936D,10px,none,none);
+    }
+
+    transition-property: transform,border-color,box-shadow;
+    transition-duration: $modal-main-duration-time;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);;
+    transition-delay: $modal-main-delay-time;
+    &:hover
+    {
+        background-color: $modal-btn-hover-color;
+        @include modal_border_color(2px,solid,transparent,10px,none,none);
+        transform: scale(105%);
+    }
+    .modal-product__check:focus+&
+    {
+        @include modal_border_color(2px,solid,$modal-btn-hover-color,10px,none,none);
+        transform: scale(110%);
+    }
+    .modal-product__check:checked + &
+    {
+        @include modal_border_color(2px,solid,#EFD478,10px,#EFD478,none);
+        box-shadow: 0px 5.26027px 19.726px rgba(212, 20, 67, 0.1);
+    }
+}
+//-----------end--label
+.modal-product__check 
+{
+    //height: 76px;
+    //margin-bottom: 20px;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    //z-index: 99;
+}
+.modal-product-image__container
+{
+    position: relative;
+    height: 56px;
+    margin-bottom: 20px;
+    display: block;
+}
+.modal-product-image
+{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 132px;
+    height: 132px;
+    display: block;
+    border-radius: 50%;
+
+    //background: linear-gradient(0deg, rgba(156, 190, 143, 0.7), rgba(156, 190, 143, 0.7)), #D9D9D9;
+    box-shadow: $modal-img-shadow-green; //---default--box-shadow--------
+
+    &--color-yellow
+    {
+        box-shadow: $modal-img-shadow-yellow;
+    }
+    &--color-brown
+    {
+        box-shadow: $modal-img-shadow-brown;
+    }
+
+    &--absolute-position
+    {
+        position: absolute;
+        top: -76px;
+        left: -2px;
+        
+        //position: relative;
+
+        //transform: translate(-1px, -65px);
+    }
+    &--add-margin-bottom
+    {
+        margin-bottom: 24px;
+    }
+    transition-property: box-shadow;
+    transition-duration: $modal-main-duration-time;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);;
+    transition-delay: $modal-main-delay-time;
+    .modal-product__checkbox:hover >.modal-product-image__container>&
+    {
+        box-shadow: $modal-img-shadow-green;
+    }
+    .modal-product__check:checked +.modal-product__checkbox>.modal-product-image__container>&
+    {
+        box-shadow: $modal-img-shadow-yellow;
+    }
+}
+
+.modal-product__name 
+{
+    display: block;
+}
+.modal-user-info 
+{
+    margin-bottom: 24px;
+    @include tablet
+    {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 32px;
+        max-width: 368px;
+
+        display: flex;
+        flex-direction: column;
+    }
+    &--ingradient-margin
+    {
+        margin-bottom: 32px;
+    }
+}
+.modal-user-info__item 
+{
+    &:not(:last-child)
+    {
+        margin-bottom: 12px;
+        @include tablet
+        {
+            margin-bottom: 16px;
+        }
+    }
+}
+.modal-user-info__input 
+{
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    border: 1px solid #84A178;
+    border-radius: 10px;
+    background: rgba(248, 210, 78, 0.1);
+
+    &:required:valid
+    {
+        border-color:  $modal-btn-hover-color;
+        background: rgba(248, 210, 78, 0.1);
+    }
+    &:required:invalid
+    {
+        border-color: 2px solid #d32020;
+        background: rgba(248, 146, 78, 0.2);
+    }
+    &--textarea
+    {
+        height: 65px;
+        resize: none;
+    }
+}
+.modal-btn 
+{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 34px;
+    padding-right: 34px;
+
+    border-radius: 10px;
+    border: none;
+    background-color: $modal-btn-def-color;
+
+    transition-property: color, background-color;
+    transition-duration: $modal-main-duration-time;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);;
+    transition-delay: $modal-main-delay-time;
+
+    &:hover
+    {
+        background-color: $modal-btn-hover-color;
+    }
+    &:focus
+    {
+        color: $modal-btn-focus-text-color;
+        background-color: $modal-btn-hover-color;
+        outline: none;
+    }
+}
+
+.modal-energy 
+{
+    margin-bottom: 39px;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet
+    {
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 48px;
+    }
+}
+.modal-energy__item 
+{
+    width: 53px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.2;
+
+    border-radius: 40px;
+    border: 2px solid #9CBE8F;
+}
+.modal-energy__val 
+{
+    margin: 0;
+    margin-bottom: 8px;
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(-2px);
+
+    border-radius: 50%;
+    background: #9CBE8F;
+    border: 2px solid #9CBE8F;
+    box-shadow: 0px 6px 20px rgba(10, 136, 23, 0.25);
+}
+.modal-energy__measures 
+{
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.modal-header-ingredients
+{
+    margin-top: 0;
+    margin-bottom: 24px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.ingredients-list 
+{
+    margin-bottom: 48px;
+}
+.ingredients-list__item 
+{
+    display: flex;
+    justify-content: space-between;
+    &:not(:last-child)
+    {
+        margin-bottom: 11px;
+    }
+}
+.ingredients-list__val-name {
+}
+.ingredients-list__val {
+}
+
+.modal-window__media-content 
+{
+    margin-bottom: 20px;
+    @include tablet
+    {
+        margin-bottom: 32px;
+    }
+}
+.modal-video-window
+{
+    max-width: 294px;
+    max-height: 199px;
+    @include tablet
+    {
+        max-width: 448px;
+        max-height: 205px;
+        width: 448px;
+        height: 205px;
+    }
+}
+
+.modal-window__main-text 
+{
+    margin-bottom: 24px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.4;
+
+    @include tablet
+    {
+        font-size: 16px;
+    }
+}
+.modal-map 
+{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 24px;
+
+    border-radius: 10px;
+    @include tablet
+    {
+        height: 260px;
+    }
+}
+.modal-btn__link
+{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 34px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    //color: currentColor;
+    //outline: 1px solid red;
+    border-radius: 10px;
+
+    background: #F8D24E;
+    color: $modal-window-main-text-color;
+
+    transition-property: color, background-color;
+    transition-duration: $modal-main-duration-time;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);;
+    transition-delay: $modal-main-delay-time;
+    &:hover
+    {
+        background-color: $modal-btn-hover-color;
+    }
+    &:focus
+    {
+        color: $modal-btn-focus-text-color;
+        background-color: $modal-btn-hover-color;
+        outline: none;
+    }
+}
+
+.no-scroll {
+    overflow: hidden;
+}

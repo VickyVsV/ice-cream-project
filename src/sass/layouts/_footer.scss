@@ -1,0 +1,202 @@
+.footer {
+  position: relative;
+  background-color: $main-body-color;
+  @include desktop {
+  }
+  &__container {
+    max-width: 480px;
+    margin-top: -1px;
+    padding-bottom: 62px;
+    @include tablet {
+      max-width: 768px;
+      padding: 0 32px 13px 32px;
+    }
+    @include desktop {
+      max-width: 1200px;
+      padding: 0 16px 11px 16px;
+      position: relative;
+    }
+  }
+  &__content {
+    margin-bottom: 56px;
+    @include tablet {
+      align-items: flex-end;
+      display: flex;
+      margin-bottom: 46px;
+    }
+    @include desktop {
+      margin-bottom: 66px;
+    }
+    // width: 100%;
+    // margin-top: -1px;
+    // @include mobile {
+    //   width: 480px;
+    // }
+    // @include tablet {
+    //   display: flex;
+    //   padding: 0 32px;
+    //   width: 768px;
+    // }
+    // @include desktop {
+    //   padding: 0 16px;
+    //   width: 1200px;
+
+  }
+  &__title {
+    max-width: 234px;
+    margin-bottom: 42px;
+    @include tablet {
+      min-width: 352px;
+      margin-bottom: 0;
+    }
+    @include desktop {
+      min-width: 504px;
+    }
+  }
+  &__title-one {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;
+    text-transform: uppercase;
+    color: $main-text-color;
+    @include tablet {
+      margin-bottom: 9px;
+      font-size: 26px;
+      line-height: 1.23;
+    }
+    @include desktop {
+      margin-bottom: 14px;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 1.23;
+    }
+  }
+  &__title-two {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.21;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $main-text-color;
+    @include tablet {
+      font-size: 48px;
+      line-height: 1.23;
+      letter-spacing: 0.06em;
+    }
+    @include desktop {
+      font-size: 58px;
+      line-height: 1.22;
+    }
+  }
+  &__social {
+    margin-left: auto;
+    @include tablet {
+      padding-bottom: 24px;
+    }
+    @include desktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__social-list {
+    margin-bottom: 38px;
+    display: flex;
+    justify-content: right;
+    gap: 28px;
+    @include tablet {
+      gap: 30px;
+      margin-bottom: 32px;
+    }
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+  &__social-link {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: $button-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+      scale: 1.1;
+    }
+  }
+  &__social-icon {
+    fill: $main-body-color;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__social-link:hover &__social-icon {
+    fill: $main-text-color;
+  }
+  &__social-link:focus &__social-icon {
+    transform: scale(1.1);
+    fill: $main-text-color;
+  }
+  &__social-text,
+  &__social-tel-link {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: right;
+    @include tablet {
+      font-size: 14px;
+      line-height: 1.86;
+    }
+    @include desktop {
+      font-size: 16px;
+      line-height: 1.88;
+      letter-spacing: 0.02em;
+    }
+  }
+  &__social-text {
+    color: $second-text-color;
+  }
+  &__social-tel-link {
+    color: $main-text-color;
+  }
+
+  &__bottom-text {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #7a7a7a;
+    @media screen and (max-width: 767px) {
+      width: 150px;
+    }
+    @include tablet {
+      line-height: 1.86;
+      letter-spacing: 0.02em;
+    }
+    @include desktop {
+      font-size: 12px;
+      line-height: 1.83;
+    }
+  }
+  &__border--position {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    bottom: 120px;
+    border-bottom: 1px solid #e1e1e1;
+    @include tablet {
+      bottom: 53px;
+    }
+    @include desktop {
+      max-width: 1167px;
+      bottom: 45px;
+      left: 16px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@include desktop {
+body,
+a,
+button,
+label {
+    cursor: url(../images/cursor.png), auto;
+    @include retina {
+        cursor: url(../images/cursor_2x.png), auto;
+    }
+}
+}
